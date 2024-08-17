@@ -1,36 +1,60 @@
-import { allPosts } from "@/.contentlayer/generated";
+import { allWritings } from "@/.contentlayer/generated";
+import { getReadableDate } from "@/lib/date";
 import Link from "next/link";
 
 export default function Home() {
-  const getReadableDate = (date: string) => {
-    return new Date(date).getFullYear() + "-" + (new Date(date).getMonth() + 1) + "-" + new Date(date).getDate();
-  }
-  const processedPosts = allPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  ).map((post) => {
-    return {
-      ...post,
-      date: getReadableDate(post.date)
-    }
-  }).slice(0, 4);
+  const processedWritings = allWritings
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map((post) => {
+      return {
+        ...post,
+        date: getReadableDate(post.date),
+      };
+    })
+    .slice(0, 4);
   return (
-    <div className="prose dark:prose-invert">
+    <div className=" w-full">
       <div className="mt-[5%] text-base flex flex-col leading-normal">
+        <div className="w-full mb-4 flex items-center justify-between">
+          <div className="avatar">
+            <div className="rounded-full w-16 md:w-24">
+              <img src="/wendaolee.jpeg" alt="avatar" className="mt-0 mb-0 object-contain" />
+            </div>
+          </div>
+        </div>
+        <div className="divider"></div>
         <section className="mb-[20px] w-full">
           李问道。随便写写东西的人：代码、杂文、小说等等。
           <br />
-          在本站，技术与学术相关文档放在Blog中，杂文放在Essay中，小说放在Novel中。
+          <br />
+          在本站，文章产出存放在 Writings
+          中，其他产出存放在 Works 里。
+          <br />
+          <br />
+          其中，<strong>Writings</strong> 里:
+          <ul>
+            <li>【Blog】标识的多为技术文章</li>
+            <li>【Essay】标识的为杂文随笔</li>
+            <li>【Novel】标识的为小说</li>
+            <li>【Translation】标识的为翻译</li>
+          </ul>
+          <br />
+          想要与我联系可以在下方找到联系方式。
+          <br />
         </section>
+        <div className="divider"></div>
         <section
-          className="mb-[20px]"
+          className="mb-0"
           style={{ width: "80%", display: "flex" }}
         >
           Wendao Lee, also known as Erika Lee, is a writer and a programmer.
           Most of the articles here are Chinese.
         </section>
+        <div className="divider"></div>
         <section>
-          <ul
-          >
+          <h2 className="mb-0 mt-0">你可以在这里找到我👏</h2>
+          <h4 className="mb-[20px] mt-0">Contact</h4>
+          <ul>
             <li>
               Github: <a href="https://github.com/WendaoLee">@Wendaolee</a>
             </li>
@@ -59,15 +83,14 @@ export default function Home() {
           <h4 style={{ marginTop: 0 }}>Recently Updated</h4>
           <div>
             <ul>
-              {processedPosts
-                .map((post) => (
-                  <li key={post._id}>
-                    <Link href={post.slug}>
-                      <span>{post.title}</span>
-                    </Link>
-                    <span>, {post.date}</span>
-                  </li>
-                ))}
+              {processedWritings.map((post) => (
+                <li key={post._id}>
+                  <Link href={post.slug}>
+                    <span>{post.title}</span>
+                  </Link>
+                  <span>, {post.date}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

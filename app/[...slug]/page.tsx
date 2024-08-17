@@ -4,7 +4,7 @@ import { allPages } from "contentlayer/generated";
 import { match } from "ts-pattern";
 
 import { Mdx } from "@/components/MdxComponents";
-import BlogLists from "@/components/BlogList";
+import WritingsLists from "@/components/WritingsList";
 
 interface PageProps {
   params: {
@@ -55,7 +55,7 @@ export default async function PagePage({ params }: PageProps) {
     <article className="py-6 prose dark:prose-invert">
       <h1>{page.title}</h1>
       {match(page.title)
-        .with("About", () => <BlogLists></BlogLists>)
+        .with("About", () => <WritingsLists></WritingsLists>)
         .otherwise(() => <></>)}
 
       {page.description && <p className="text-xl">{page.description}</p>}

@@ -1,10 +1,10 @@
 import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
-import BlogLists from "./BlogList"
+import WritingsLists from "./WritingsList"
 
 const components = {
   Image,
-  BlogLists
+  BlogLists: WritingsLists
 }
 
 interface MdxProps {

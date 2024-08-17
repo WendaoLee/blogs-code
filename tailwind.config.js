@@ -7,7 +7,16 @@ module.exports = {
   ],
   darkMode: ["class"],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none', // 去除最大宽度限制
+            fontFamily:" Cantarell, 'Source Han Serif CN VF' !important;"
+          },
+        }
+      }
+    },
   },
   plugins: [require("@tailwindcss/typography"),require('daisyui')],
 }

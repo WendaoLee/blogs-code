@@ -24,7 +24,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="max-w-4xl mx-auto py-10 px-4">
             <Header></Header>
-            <main className="w-full">{children}</main>
+            <main className="w-full prose dark:prose-invert">{children}</main>
           </div>
           <Analytics />
         </ThemeProvider>
