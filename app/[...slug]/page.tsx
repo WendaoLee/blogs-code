@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import { allPages } from "contentlayer/generated";
 import { match } from "ts-pattern";
 
-import { Mdx } from "@/components/mdx-components";
-import BlogLists from "@/components/blogList";
+import { Mdx } from "@/components/MdxComponents";
+import BlogLists from "@/components/BlogList";
 
 interface PageProps {
   params: {

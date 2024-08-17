@@ -26,7 +26,7 @@ export default function Home() {
           style={{ width: "80%", display: "flex" }}
         >
           Wendao Lee, also known as Erika Lee, is a writer and a programmer.
-          Most of the articles here are in Chinese.
+          Most of the articles here are Chinese.
         </section>
         <section>
           <ul
