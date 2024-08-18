@@ -1,7 +1,6 @@
 import "./globals.css"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/ThemeProvider"
-import { Analytics } from "@/components/Analytics"
 import Header from "@/components/Header"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -26,7 +25,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Header></Header>
             <main className="w-full prose dark:prose-invert">{children}</main>
           </div>
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
