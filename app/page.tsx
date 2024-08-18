@@ -24,7 +24,10 @@ export default function Home() {
         </div>
         <div className="divider"></div>
         <section className="mb-[20px] w-full">
-          李问道。随便写写东西的人：代码、杂文、小说等等。
+          李问道。随便写写东西的人。
+          <br />
+          <br />
+          “苔痕深院雨，人影小窗灯”——这是我个人对自己目前的人生评价。
           <br />
           <br />
           在本站，文章产出存放在 Writings
@@ -39,7 +42,9 @@ export default function Home() {
             <li>【Translation】标识的为翻译</li>
           </ul>
           <br />
-          想要与我联系可以在下方找到联系方式。
+          这个博客站点还在缓慢更新中。
+          <br />
+          想要与我联系可以在下方找到联系方式😉。
           <br />
         </section>
         <div className="divider"></div>
@@ -48,7 +53,9 @@ export default function Home() {
           style={{ width: "80%", display: "flex" }}
         >
           Wendao Lee, also known as Erika Lee, is a writer and a programmer.
+          <br />
           Most of the articles here are Chinese.
+          <br />
         </section>
         <div className="divider"></div>
         <section>
@@ -67,7 +74,7 @@ export default function Home() {
               <a href="https://www.douban.com/people/leewendao">李问道</a>
             </li>
             <li>
-              微信公众号: <a href="">水獭日知社</a>
+              微信公众号: <a href="/page/wechat">水獭日知社</a>
             </li>
           </ul>
         </section>

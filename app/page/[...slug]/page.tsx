@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { allPages } from "contentlayer/generated";
+import { allPages } from "@/.contentlayer/generated";
 import { match } from "ts-pattern";
 
 import { Mdx } from "@/components/MdxComponents";
@@ -17,7 +17,7 @@ async function getPageFromParams(params: PageProps["params"]) {
   const page = allPages.find((page) => page.slugAsParams === slug);
 
   if (!page) {
-    null;
+    return null;
   }
 
   return page;
@@ -38,13 +38,23 @@ export async function generateMetadata({
   };
 }
 
+export const dynamicParams = false 
+export const dynamic = 'force-static'
+
 export async function generateStaticParams(): Promise<PageProps["params"][]> {
+  console.log(
+    allPages.map((page) => ({
+      slug: page.slugAsParams.split("/"),
+    }))
+  )
+  console.log('--end---')
   return allPages.map((page) => ({
     slug: page.slugAsParams.split("/"),
   }));
 }
 
 export default async function PagePage({ params }: PageProps) {
+  console.log({params})
   const page = await getPageFromParams(params);
 
   if (!page) {
